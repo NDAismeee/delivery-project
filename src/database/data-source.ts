@@ -7,13 +7,13 @@ export const dbdatasource: DataSourceOptions = {
     host: 'localhost',
     port: 3306,
     username: 'root',
-    password: '',
+    password: 'root',
     // Database name
     database: 'delivery-db',
     // Synchronize database schema with entities 
     synchronize: false,
     // TypeORM Entity
-    entities: ['src/entities/*{.js, .ts}'],
+    entities: ['src/enities/*{.js,.ts}'],
     // Your Migration path
     migrations: ['src/migrations/*{.js, .ts}'],
     logging: true,
