@@ -1,10 +1,9 @@
-import { isNotEmpty } from 'class-validator';
+import { IsNotEmpty, isNotEmpty } from 'class-validator';
 import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-console.log('tracking...')
 @Entity('warehouses')
 export class WarehouseEntity extends BaseEntity {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn()@IsNotEmpty()
     warehouseID: number;
 
     @Column()
