@@ -39,6 +39,7 @@ export class WarehouseService {
         }
         const index = this.warehouses.findIndex(item => item.warehouseID === warehouse.warehouseID);
         if (index !== -1) {
+            this.id -= 1;
             return 'Already has this warehouse';
         }else {
             this.warehouses.push(warehouse);

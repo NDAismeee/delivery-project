@@ -6,9 +6,7 @@ import { Customer } from "src/models/customer.model";
 export class CustomerService {
     private id;
 
-    private customers: Customer[] = [
-        
-    ]
+    private customers: Customer[] = []
 
     getCustomerByID(id: number): Customer {
         return this.customers.find(item => item.customerID == id);
@@ -22,6 +20,7 @@ export class CustomerService {
         }
         const index = this.customers.findIndex(item => item.customerID === customer.customerID);
         if (index !== -1) {
+            this.id -= 1;
             return "Customer has already existed";
         }
         this.customers.push(customer);

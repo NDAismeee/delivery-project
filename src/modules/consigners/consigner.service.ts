@@ -6,9 +6,7 @@ import { Consigner } from "src/models/consigner.model";
 export class ConsignerService {
     private id;
 
-    private consigners: Consigner[] = [
-
-    ]
+    private consigners: Consigner[] = []
 
     getConsignerInformationByID(id: number): Consigner {
         return this.consigners.find(item => id === item.consignerID);
@@ -25,8 +23,9 @@ export class ConsignerService {
             ...consignerDTO
         }
 
-        const index = this.consigners.findIndex(item => item.consignerID === consigner.consignerID);
+        const index = this.consigners.findIndex(item => item.consignerName === consigner.consignerName);
         if (index !== -1) {
+            this.id -= 1;
             return "Already had this consigner";
         }else {
             this.consigners.push(consigner);
