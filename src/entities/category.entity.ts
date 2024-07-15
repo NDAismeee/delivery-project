@@ -4,14 +4,15 @@ import { ProductEntity } from "./product.entity";
 
 @Entity('catgories')
 export class CategoryEntity extends BaseEntity {
-    @PrimaryColumn()
-    @IsNotEmpty()
-    @OneToMany(() => ProductEntity, product => product.categoryID)
+    @PrimaryColumn()@IsNotEmpty()
     categoryID: number;
+
+    @OneToMany(() => ProductEntity, product => product.category)
+    product1: ProductEntity[]
 
     @Column()
     categoryName: String;
 
     @Column()
     noOfPros: number;
-}
+} 

@@ -6,8 +6,10 @@ import { ProductEntity } from "./product.entity";
 export class ConsignerEntity extends BaseEntity {
     @PrimaryColumn()
     @IsNotEmpty()
-    @OneToMany(() => ProductEntity, product => product.consignerID)
     consignerID: number;
+
+    @OneToMany(() => ProductEntity, product => product.consigner)
+    product2: ProductEntity[];
 
     @Column()
     consignerName: String;

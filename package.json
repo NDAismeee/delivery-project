@@ -23,7 +23,7 @@
     "typeorm:cache": "npx typeorm-ts-node-commonjs cache:clear",
     "schema:drop": "npx typeorm-ts-node-commonjs -d ./src/database/data-source.ts",
     "migration:create": "typeorm migration:create ./src/migrations/schema-update",
-    "migration:generate": "npx typeorm-ts-node-commonjs migration:generate ./src/migrations/schema-update -d ./src/database/data-source.ts",
+    "migration:generate": "npx typeorm-ts-node-commonjs migration:generate ./src/migrations/%file_name% -d ./src/database/data-source.ts",
     "migration:show": "npx typeorm-ts-node-commonjs migration:show -d ./src/database/data-source.ts",
     "migration:run": "npx typeorm-ts-node-commonjs migration:run -d  ./src/database/data-source.ts",
     "migration:revert": "npx typeorm-ts-node-commonjs migration:revert -d ./src/database/data-source.ts"
@@ -35,7 +35,7 @@
     "@nestjs/typeorm": "^10.0.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
-    "mysql2": "^3.10.1",
+    "mysql2": "^3.10.2",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
     "typeorm": "^0.3.20"

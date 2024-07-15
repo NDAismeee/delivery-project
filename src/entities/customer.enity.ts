@@ -1,14 +1,18 @@
 import { IsNotEmpty } from "class-validator";
-import { BaseEntity, Column, Entity, PrimaryColumn } from "typeorm";
+import { BaseEntity, Column, Entity, ManyToOne, OneToMany, PrimaryColumn } from "typeorm"
+import { OrderEntity } from "./order.entity";
 
 @Entity('customers')
 export class CustomerEntity extends BaseEntity {
     @PrimaryColumn()@IsNotEmpty()
     customerID: number;
 
-    @Column()
-    customerName: String
+    @OneToMany(() => OrderEntity, order => order.customer)
+    order:OrderEntity[];
 
     @Column()
-    customerAddress: String
+    customerName: String;
+
+    @Column()
+    customerAddress: String;
 }
